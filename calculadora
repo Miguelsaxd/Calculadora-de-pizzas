@@ -1,0 +1,38 @@
+def calcular_costo_total(num_pizzas, precio_por_pizza):
+    costo_total = num_pizzas * precio_por_pizza
+    return costo_total
+
+precio_por_pizza = 18  # Precio por pizza en pesos
+
+try:
+    num_pizzas = int(input("Ingrese la cantidad de pizzas que desea comprar: "))
+    if num_pizzas < 0:
+        print("La cantidad de pizzas no puede ser negativa.")
+    else:
+        costo_total = calcular_costo_total(num_pizzas, precio_por_pizza)
+        print(f"El costo total de {num_pizzas} pizzas es de {costo_total} pesos.")
+except ValueError:
+    print("Por favor, ingrese un número válido para la cantidad de pizzas.")
+def calcular_costo_total(num_pizzas, precio_por_pizza):
+    costo_total = num_pizzas * precio_por_pizza
+    return costo_total
+
+precio_por_pizza = 18  # Precio por pizza en pesos
+precio_promocion = 30  # Precio de 2 pizzas en promoción
+
+try:
+    num_pizzas = int(input("Ingrese la cantidad de pizzas que desea comprar: "))
+    if num_pizzas < 0:
+        print("La cantidad de pizzas no puede ser negativa.")
+    else:
+        costo_total = 0
+        if num_pizzas >= 2:
+            costo_promocion = (num_pizzas // 2) * precio_promocion
+            costo_sin_promocion = (num_pizzas % 2) * precio_por_pizza
+            costo_total = costo_promocion + costo_sin_promocion
+        else:
+            costo_total = num_pizzas * precio_por_pizza
+
+        print(f"El costo total de {num_pizzas} pizzas es de {costo_total} pesos.")
+except ValueError:
+    print("Por favor, ingrese un número válido para la cantidad de pizzas.")
